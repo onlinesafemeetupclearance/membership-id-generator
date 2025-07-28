@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OSMC Membership ID Generator</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="form-wrapper">
+    <div class="form-container">
+      <h2>OSMC Membership Sign-Up</h2>
+      <form id="membershipForm">
+        <input type="text" id="fullName" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email Address" required />
+        <input type="text" id="username" placeholder="Desired Username" required />
+        <input type="text" id="city" placeholder="City" required />
+        <input type="text" id="state" placeholder="State" required />
+        <label for="profilePic" class="upload-btn">Upload your profile picture</label>
+        <input type="file" id="profilePic" accept="image/*" required hidden />
+        <button type="submit">Generate ID</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="idPage" style="display:none;">
+    <div id="idCard">
+      <img src="sunset-silhouette-romance-stockcake.jpg" class="background" id="bgImg"/>
+      <img src="logo.png" class="logo" />
+      <div class="id-content">
+        <img id="displayPic" class="profile-pic" />
+        <h2 id="displayName"></h2>
+        <p id="displayEmail"></p>
+        <p id="displayUsername"></p>
+        <p id="displayCityState"></p>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://onlinesafemeetup.com" class="qr-code" />
+        <p class="fine-print">
+          By using this ID, you agree to the terms and conditions of OnlineSafeMeetup.com,
+          including respecting member privacy, safety, and proper conduct during meetups.
+          Misuse may result in membership termination.
+        </p>
+      </div>
+    </div>
+    <button id="downloadBtn">Download ID</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
